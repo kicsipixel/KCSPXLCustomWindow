@@ -27,6 +27,10 @@ public class KCSPXLCustomWindowViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         print("Hello, I'm from SPM ViewController module.")
+       
     }
     
+    public func addLabel() {
+       
+     }
 }

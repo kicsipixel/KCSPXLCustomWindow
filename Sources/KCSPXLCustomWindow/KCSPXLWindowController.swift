@@ -11,7 +11,7 @@ import Cocoa
 
 public class KCSPXLCustomWindowWindowController: NSWindowController {
     
-   public convenience init() {
+    public convenience init() {
         self.init(windowNibName: "")
     }
         
@@ -25,7 +25,7 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         self.window?.title = "KCSPXL Custom Window"
         self.window?.titlebarAppearsTransparent = true
         self.window?.styleMask.insert(.fullSizeContentView)
-     //   self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
+        self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
 
     }
 
