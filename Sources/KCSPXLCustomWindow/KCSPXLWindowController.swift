@@ -11,7 +11,7 @@ import Cocoa
 
 public class KCSPXLCustomWindowWindowController: NSWindowController {
     
-    var isViewControllerRequired = trues
+    var isViewControllerRequired = true
     
     public convenience init() {
         self.init(windowNibName: "")
