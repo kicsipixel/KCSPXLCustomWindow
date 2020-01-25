@@ -12,6 +12,8 @@ import Cocoa
 public class KCSPXLCustomWindowWindowController: NSWindowController {
     
     var isViewControllerRequired = true
+    var customWindowWidth = 0
+    var customWindowHeight = 0
     
     public convenience init() {
         self.init(windowNibName: "")
@@ -20,7 +22,13 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
     override public func loadWindow() {
        
         // MARK: Create window
-        let windowSize = NSSize(width: 600, height: 300)
+        
+        if customWindowWidth == 0 || customWindowHeight == 0 {
+            let windowSize = NSSize(width: 600, height: 300)
+        } else {
+            let windowSize = NSSize(width: customWindowWidth, height: customWindowHeight)
+        }
+        
         let screenSize = NSScreen.main?.frame.size ?? .zero
         let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
         window = KCSPXLCustomWindowWindow(contentRect: rect, styleMask: [], backing: .buffered, defer: true)
@@ -37,6 +45,11 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
     
     public func changeViewControllerRequired(isRequired: Bool) {
         isViewControllerRequired = isRequired
+    }
+    
+    public func changeCustomWindowSize(customWidth:Int, customHeight:Int) {
+        customWindowWidth = customWidth
+        customWindowHeight = customHeight
     }
   
 }
