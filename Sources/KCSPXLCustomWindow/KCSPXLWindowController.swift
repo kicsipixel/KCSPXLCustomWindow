@@ -22,11 +22,11 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
     override public func loadWindow() {
        
         // MARK: Create window
-        
+        var windowSize = NSSize()
         if customWindowWidth == 0 || customWindowHeight == 0 {
-            let windowSize = NSSize(width: 600, height: 300)
+            windowSize = NSSize(width: 600, height: 300)
         } else {
-            let windowSize = NSSize(width: customWindowWidth, height: customWindowHeight)
+            windowSize = NSSize(width: customWindowWidth, height: customWindowHeight)
         }
         
         let screenSize = NSScreen.main?.frame.size ?? .zero
