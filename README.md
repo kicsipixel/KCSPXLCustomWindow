@@ -10,4 +10,6 @@
 `lazy var kcsplWindowController = KCSPXLCustomWindowWindowController()`
 
 5. Add to `func applicationDidFinishLaunching(_ aNotification: Notification)`
+        // Remove the white background test ViewController 
+        `kcspxlCustomWindowController.changeViewControllerRequired(isRequired: false)`
         `kcspxlWindowController.showWindow(nil)`

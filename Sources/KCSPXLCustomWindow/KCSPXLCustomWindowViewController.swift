@@ -21,16 +21,14 @@ public class KCSPXLCustomWindowViewController: NSViewController {
     override public func loadView() {
         self.view = NSView()
         view.frame.size = CGSize(width: 600, height: 300)
+        view.wantsLayer = true
+        view.layer?.backgroundColor = NSColor.white.cgColor
     }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
         print("Hello, I'm from SPM ViewController module.")
-       
     }
-    
-    public func addLabel() {
-       
-     }
+
 }

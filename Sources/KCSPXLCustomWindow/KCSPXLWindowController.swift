@@ -11,12 +11,14 @@ import Cocoa
 
 public class KCSPXLCustomWindowWindowController: NSWindowController {
     
+    var isViewControllerRequired = trues
+    
     public convenience init() {
         self.init(windowNibName: "")
     }
         
     override public func loadWindow() {
-        
+       
         // MARK: Create window
         let windowSize = NSSize(width: 600, height: 300)
         let screenSize = NSScreen.main?.frame.size ?? .zero
@@ -25,8 +27,16 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         self.window?.title = "KCSPXL Custom Window"
         self.window?.titlebarAppearsTransparent = true
         self.window?.styleMask.insert(.fullSizeContentView)
-        self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
+        
+        // For testing purose I added a white background ViewController
+        if isViewControllerRequired {
+            self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
+        }
 
     }
-
+    
+    public func changeViewControllerRequired(isRequired: Bool) {
+        isViewControllerRequired = isRequired
+    }
+  
 }
