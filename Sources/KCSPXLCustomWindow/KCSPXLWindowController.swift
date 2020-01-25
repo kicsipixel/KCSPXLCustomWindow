@@ -8,8 +8,9 @@
 
 import Cocoa
 
-public class KCSPXLCustomWindowWindowController: NSWindowController {
 
+public class KCSPXLCustomWindowWindowController: NSWindowController {
+    
    public convenience init() {
         self.init(windowNibName: "")
     }
@@ -21,10 +22,11 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         let screenSize = NSScreen.main?.frame.size ?? .zero
         let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
         window = KCSPXLCustomWindowWindow(contentRect: rect, styleMask: [], backing: .buffered, defer: true)
-        self.window?.title = "KCSPXL Window"
+        self.window?.title = "KCSPXL Custom Window"
         self.window?.titlebarAppearsTransparent = true
         self.window?.styleMask.insert(.fullSizeContentView)
-        self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
+     //   self.window?.contentViewController = KCSPXLCustomWindow.KCSPXLCustomWindowViewController()
+
     }
 
 }

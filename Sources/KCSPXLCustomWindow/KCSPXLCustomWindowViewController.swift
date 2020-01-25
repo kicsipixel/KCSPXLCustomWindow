@@ -9,20 +9,18 @@
 import Cocoa
 
 public class KCSPXLCustomWindowViewController: NSViewController {
-    
+        
     public init() {
-            super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: nil)
     }
         
     public required init?(coder: NSCoder) {
-            fatalError()
+        fatalError()
     }
     
     override public func loadView() {
-           self.view = NSView()
-           view.frame.size = CGSize(width: 600, height: 300)
-           view.wantsLayer = true
-        view.layer?.backgroundColor = NSColor.black.cgColor
+        self.view = NSView()
+        view.frame.size = CGSize(width: 600, height: 300)
     }
 
     override public func viewDidLoad() {
