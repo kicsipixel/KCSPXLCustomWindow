@@ -8,5 +8,6 @@
 4. Add to `AppDelegate.swift` 
 
 `lazy var kcsplWindowController = KCSPXLCustomWindowWindowController()`
+
 5. Add to `func applicationDidFinishLaunching(_ aNotification: Notification)`
         `kcspxlWindowController.showWindow(nil)`
