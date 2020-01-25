@@ -1,6 +1,6 @@
 //
 //  KCSPXLCustomWindowViewController.swift
-//  KCSPXLWindow
+//  KCSPXLCustomWindow
 //
 //  Created by Szabolcs Toth on 25/01/2020.
 //  Copyright © 2020 purzelbaum.hu. All rights reserved.
