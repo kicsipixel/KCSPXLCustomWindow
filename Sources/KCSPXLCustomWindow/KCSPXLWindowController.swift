@@ -69,7 +69,7 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         isTitleRequired = isRequired
     }
     
-    public func changeWindowTitle(windowTitle: String) {
-        windowTitle = windowTitle
+    public func changeWindowTitle(newTitle: String) {
+        windowTitle = newTitle
     }
 }
