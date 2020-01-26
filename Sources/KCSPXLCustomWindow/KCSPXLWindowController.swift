@@ -13,6 +13,7 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
     
     var isViewControllerRequired = true
     var isTitleRequired = true
+    var windowTitle = ""
     var customWindowWidth = 0
     var customWindowHeight = 0
     
@@ -36,7 +37,11 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         window = KCSPXLCustomWindowWindow(contentRect: rect, styleMask: [], backing: .buffered, defer: true)
         
         if isTitleRequired {
-            self.window?.title = "KCSPXL Custom Window"
+            if windowTitle != "" {
+                self.window?.title = windowTitle
+            } else {
+                self.window?.title = "KCSPXL Custom Window"
+            }
         } else {
             self.window?.titleVisibility = .hidden
         }
@@ -63,5 +68,8 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
     public func changeIsTitleRequired(isRequired: Bool) {
         isTitleRequired = isRequired
     }
-  
+    
+    public func changeWindowTitle(windowTitle: String) {
+        windowTitle = windowTitle
+    }
 }
