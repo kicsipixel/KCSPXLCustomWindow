@@ -12,6 +12,7 @@ import Cocoa
 public class KCSPXLCustomWindowWindowController: NSWindowController {
     
     var isViewControllerRequired = true
+    var isTitleRequired = true
     var customWindowWidth = 0
     var customWindowHeight = 0
     
@@ -23,6 +24,7 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
        
         // MARK: Create window
         var windowSize = NSSize()
+       
         if customWindowWidth == 0 || customWindowHeight == 0 {
             windowSize = NSSize(width: 600, height: 300)
         } else {
@@ -32,7 +34,13 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
         let screenSize = NSScreen.main?.frame.size ?? .zero
         let rect = NSMakeRect(screenSize.width/2 - windowSize.width/2, screenSize.height/2 - windowSize.height/2, windowSize.width, windowSize.height)
         window = KCSPXLCustomWindowWindow(contentRect: rect, styleMask: [], backing: .buffered, defer: true)
-        self.window?.title = "KCSPXL Custom Window"
+        
+        if isTitleRequired {
+            self.window?.title = "KCSPXL Custom Window"
+        } else {
+            self.window?.titleVisibility = .hidden
+        }
+        
         self.window?.titlebarAppearsTransparent = true
         self.window?.styleMask.insert(.fullSizeContentView)
         
@@ -43,13 +51,17 @@ public class KCSPXLCustomWindowWindowController: NSWindowController {
 
     }
     
-    public func changeViewControllerRequired(isRequired: Bool) {
+    public func changeIsViewControllerRequired(isRequired: Bool) {
         isViewControllerRequired = isRequired
     }
     
     public func changeCustomWindowSize(customWidth:Int, customHeight:Int) {
         customWindowWidth = customWidth
         customWindowHeight = customHeight
+    }
+    
+    public func changeIsTitleRequired(isRequired: Bool) {
+        isTitleRequired = isRequired
     }
   
 }
