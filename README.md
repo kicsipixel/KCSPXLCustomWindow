@@ -12,7 +12,7 @@
 5. Add to `func applicationDidFinishLaunching(_ aNotification: Notification)`
 
 
-        // Remove the white background test ViewController 
+        // Remove the white background test ViewController if you gave your own… 
         kcspxlCustomWindowController.changeViewControllerRequired(isRequired: false)
         kcspxlWindowController.showWindow(nil)
 		
