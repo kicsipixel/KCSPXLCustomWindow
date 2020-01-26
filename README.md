@@ -9,13 +9,13 @@
 
 `lazy var kcsplWindowController = KCSPXLCustomWindowWindowController()`
 
-5. Add
-		`
-		func applicationDidFinishLaunching(_ aNotification: Notification)
+5. Add to `func applicationDidFinishLaunching(_ aNotification: Notification)`
+
+
         // Remove the white background test ViewController 
         kcspxlCustomWindowController.changeViewControllerRequired(isRequired: false)
         kcspxlWindowController.showWindow(nil)
-		`
+		
 
 Options:
 - `changeIsViewControllerRequired` - you can add your custom NSViewController to the new window by removing the test ViewController
